@@ -45,5 +45,6 @@
     "start": "probot run .",
     "test": "jest",
     "tslint": "tslint --format stylish --project ."
-  }
+  },
+  "version": "0.0.1"
 }
