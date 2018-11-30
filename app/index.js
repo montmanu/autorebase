@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const autorebase_1 = require("./autorebase");
 module.exports = (app) => {
     app.log("App loaded");
-    app.on("*", async (context) => {
+    app.on(["pull_request", "pull_request_review", "status"], async (context) => {
         const { owner, repo } = context.repo();
         const action = await autorebase_1.default({
             // @ts-ignore The event is of the good type because Autorebase only subscribes to a subset of webhooks.
